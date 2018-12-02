@@ -45,11 +45,56 @@ namespace ConsoleApp1
                 Console.WriteLine("Nijedan termin ne odgovara");
             */
 
-            //broj.ToString();
+            //Task 3
 
+            /*
             var number = Console.ReadLine();
 
             Console.WriteLine(ReverseNumber(number));
+            */
+
+            // Task 4
+
+            
+            var wordStart = Console.ReadLine();
+            int choice;
+
+            do
+            {
+                Console.WriteLine("1) Delete a letter of your choosing");
+                Console.WriteLine("2) Add letters x times");
+                Console.WriteLine("3) Change your chosen word with a new one");
+                Console.WriteLine("4) Stop the program");
+
+                choice = int.Parse(Console.ReadLine());
+
+                switch (choice)
+                {
+                    case 1:
+                        var letter = char.Parse(Console.ReadLine());
+                        wordStart = DeleteLetter(wordStart, letter);
+                        Console.WriteLine(wordStart);
+                        break;
+                    case 2:
+                        var numberOfLetters = int.Parse(Console.ReadLine());
+                        wordStart = AddLetters(wordStart, numberOfLetters);
+                        Console.WriteLine(wordStart);
+                        break;
+                    case 3:
+                        wordStart = Console.ReadLine();
+                        Console.WriteLine(wordStart);
+                        break;
+                    default:
+                        break;
+                }
+                
+
+            } while (choice != 4);
+            
+
+            
+
+
         }
 
         static int ReverseNumber(string number)
@@ -59,6 +104,25 @@ namespace ConsoleApp1
                 reversed += number[i];
 
             return int.Parse(reversed);
+        }
+
+        static string DeleteLetter(string word, char letter)
+        {
+            var newWord = "";
+           
+
+            foreach (var character in word)
+                if (character != letter)
+                    newWord += character;
+
+            return newWord;
+        }
+
+        static string AddLetters(string word, int numberOfLetters)
+        {
+            for (int i = 0; i < numberOfLetters; i++)
+                word += char.Parse(Console.ReadLine());
+            return word;
         }
     }
 }
