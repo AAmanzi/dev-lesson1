@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ConsoleApp1
 {
@@ -29,6 +30,7 @@ namespace ConsoleApp1
 
             //Task 2
 
+            /*
             var busyStart = int.Parse(Console.ReadLine());
             var busyEnd = int.Parse(Console.ReadLine());
             var offeredTime1 = int.Parse(Console.ReadLine());
@@ -41,6 +43,22 @@ namespace ConsoleApp1
                 Console.WriteLine(offeredTime2);
             else
                 Console.WriteLine("Nijedan termin ne odgovara");
+            */
+
+            //broj.ToString();
+
+            var number = Console.ReadLine();
+
+            Console.WriteLine(ReverseNumber(number));
+        }
+
+        static int ReverseNumber(string number)
+        {
+            var reversed = "";
+            for (int i = number.Length - 1; i >= 0; i--)
+                reversed += number[i];
+
+            return int.Parse(reversed);
         }
     }
 }
