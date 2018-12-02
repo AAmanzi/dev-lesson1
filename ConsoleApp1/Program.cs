@@ -11,7 +11,7 @@ namespace ConsoleApp1
             priceOfRose = int.Parse(Console.ReadLine());
             priceOfBattery = int.Parse(Console.ReadLine());
 
-            int priceTotal = priceOfChocolate + priceOfRose + priceOfBattery;
+            int priceTotal = priceOfChocolate + priceOfRose + 3 * priceOfBattery;
 
             if (priceTotal <= 10)
                 Console.WriteLine("Novcanica od 10");
